@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guía de Uso — Prode Mundial 2026</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #fff;
+      color: #1a1a2e;
+      line-height: 1.6;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 40px 32px;
+    }
+
+    /* PORTADA */
+    .cover {
+      text-align: center;
+      padding: 60px 20px 50px;
+      background: linear-gradient(135deg, #0a0f1e 0%, #1a2540 100%);
+      border-radius: 16px;
+      color: white;
+      margin-bottom: 40px;
+    }
+    .cover .trophy { font-size: 72px; margin-bottom: 16px; }
+    .cover h1 { font-size: 32px; font-weight: 900; color: #00c853; margin-bottom: 8px; }
+    .cover h2 { font-size: 20px; font-weight: 400; color: #ccc; margin-bottom: 20px; }
+    .cover .badge {
+      display: inline-block;
+      background: #00c853;
+      color: #0a0f1e;
+      font-weight: 700;
+      padding: 6px 20px;
+      border-radius: 999px;
+      font-size: 14px;
+    }
+
+    /* SECCIONES */
+    h2.section {
+      font-size: 22px;
+      font-weight: 800;
+      color: #00c853;
+      border-bottom: 3px solid #00c853;
+      padding-bottom: 8px;
+      margin: 36px 0 20px;
+    }
+    h3 {
+      font-size: 16px;
+      font-weight: 700;
+      color: #1a1a2e;
+      margin: 24px 0 10px;
+    }
+    p { margin-bottom: 12px; font-size: 15px; }
+    ul, ol { margin: 8px 0 16px 24px; }
+    li { font-size: 15px; margin-bottom: 6px; }
+
+    /* CAJAS */
+    .box {
+      border-radius: 12px;
+      padding: 18px 22px;
+      margin: 16px 0;
+    }
+    .box-green { background: #e8f9f0; border-left: 4px solid #00c853; }
+    .box-blue  { background: #e8f0ff; border-left: 4px solid #4a7cff; }
+    .box-yellow{ background: #fffbe8; border-left: 4px solid #f5a623; }
+    .box-dark  { background: #0a0f1e; color: #eee; border-radius: 10px; padding: 14px 18px; font-family: monospace; font-size: 14px; }
+
+    /* PASOS NUMERADOS */
+    .steps { counter-reset: step; list-style: none; margin-left: 0; }
+    .steps li {
+      counter-increment: step;
+      padding: 14px 16px 14px 56px;
+      background: #f5f7ff;
+      border-radius: 10px;
+      margin-bottom: 10px;
+      position: relative;
+    }
+    .steps li::before {
+      content: counter(step);
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: #00c853;
+      color: #0a0f1e;
+      font-weight: 900;
+      font-size: 15px;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      line-height: 1;
+    }
+
+    /* TABLA DE PUNTUACIÓN */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0;
+    }
+    th {
+      background: #0a0f1e;
+      color: #00c853;
+      padding: 10px 14px;
+      text-align: left;
+      font-size: 14px;
+    }
+    td {
+      padding: 10px 14px;
+      font-size: 14px;
+      border-bottom: 1px solid #eee;
+    }
+    tr:last-child td { border-bottom: none; }
+    tr:nth-child(even) td { background: #f9f9f9; }
+    .pts { font-weight: 700; color: #00c853; font-size: 18px; }
+
+    /* PANTALLA MOCKUP */
+    .screen-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin: 16px 0;
+    }
+    .screen-card {
+      border: 2px solid #e0e0e0;
+      border-radius: 12px;
+      padding: 16px;
+      text-align: center;
+    }
+    .screen-card .icon { font-size: 36px; margin-bottom: 8px; }
+    .screen-card .title { font-weight: 700; font-size: 15px; margin-bottom: 4px; }
+    .screen-card .desc { font-size: 13px; color: #666; }
+
+    /* PIE DE PÁGINA */
+    .footer {
+      text-align: center;
+      margin-top: 50px;
+      padding-top: 20px;
+      border-top: 1px solid #eee;
+      font-size: 13px;
+      color: #999;
+    }
+
+    /* PRINT */
+    @media print {
+      body { padding: 20px; }
+      .cover { page-break-after: avoid; }
+      h2.section { page-break-before: auto; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- PORTADA -->
+  <div class="cover">
+    <div class="trophy">🏆</div>
+    <h1>Prode Mundial 2026</h1>
+    <h2>Guía de instalación y uso</h2>
+    <span class="badge">⚽ 48 selecciones · 104 partidos · Argentina 🇦🇷</span>
+  </div>
+
+  <!-- QUÉ ES LA APP -->
+  <h2 class="section">¿Qué es esta aplicación?</h2>
+  <p>
+    <strong>Prode Mundial 2026</strong> es una aplicación gratuita para seguir el Mundial de fútbol 2026 con tus amigos. Podés ver el fixture completo, consultar los grupos, y lo más divertido: hacer predicciones de resultados y competir en tiempo real contra tus amigos en el <strong>prode grupal</strong>.
+  </p>
+  <div class="box box-green">
+    <strong>Datos del torneo:</strong> 11 de junio al 19 de julio de 2026 · 48 selecciones · 12 grupos · 104 partidos · Sede: Estados Unidos, Canadá y México.
+  </div>
+
+  <!-- INSTALACIÓN EN EL CELULAR -->
+  <h2 class="section">Cómo instalar la app en tu celular</h2>
+  <p>La app se instala gratis directamente desde el navegador, sin pasar por el Play Store ni el App Store.</p>
+
+  <h3>📱 En Android (Chrome)</h3>
+  <ol class="steps">
+    <li>Abrí Google Chrome en tu celular</li>
+    <li>Entrá a la dirección de la app (tu URL de Vercel)</li>
+    <li>Tocá los tres puntitos (<strong>⋮</strong>) arriba a la derecha</li>
+    <li>Elegí <strong>"Agregar a pantalla de inicio"</strong></li>
+    <li>Confirmá tocando <strong>"Agregar"</strong></li>
+    <li>¡Listo! Aparece el ícono de la app en tu pantalla de inicio</li>
+  </ol>
+
+  <h3>🍎 En iPhone / iPad (Safari)</h3>
+  <ol class="steps">
+    <li>Abrí Safari en tu iPhone o iPad</li>
+    <li>Entrá a la dirección de la app (tu URL de Vercel)</li>
+    <li>Tocá el botón <strong>Compartir</strong> (el cuadrado con flecha ↑ abajo de la pantalla)</li>
+    <li>Deslizá y elegí <strong>"Agregar a la pantalla de inicio"</strong></li>
+    <li>Tocá <strong>"Agregar"</strong> arriba a la derecha</li>
+    <li>¡Listo! Aparece el ícono de la app en tu pantalla de inicio</li>
+  </ol>
+
+  <div class="box box-yellow">
+    <strong>⚠️ Importante para iPhone:</strong> Usá <strong>Safari</strong>, no Chrome ni otro navegador. Solo Safari permite instalar apps en iPhone.
+  </div>
+
+  <!-- REGISTRO Y LOGIN -->
+  <h2 class="section">Crear una cuenta</h2>
+  <p>Cada participante necesita crear su propia cuenta para guardar sus predicciones en la nube.</p>
+  <ol class="steps">
+    <li>Abrí la app y tocá <strong>"Registrarse"</strong></li>
+    <li>Elegí un nombre de usuario (así te van a ver los demás en la tabla)</li>
+    <li>Ingresá tu email y una contraseña</li>
+    <li>Tocá <strong>"Crear cuenta"</strong></li>
+    <li>Confirmá tu email (revisá la bandeja de entrada y hacé clic en el link)</li>
+    <li>Volvé a la app e iniciá sesión</li>
+  </ol>
+  <div class="box box-blue">
+    <strong>💡 Tip:</strong> Si compartís la app con amigos, cada uno debe registrarse con su propio email para tener su cuenta personal y sus predicciones separadas.
+  </div>
+
+  <!-- PANTALLAS -->
+  <h2 class="section">Las pantallas de la app</h2>
+
+  <div class="screen-grid">
+    <div class="screen-card">
+      <div class="icon">🏠</div>
+      <div class="title">Inicio</div>
+      <div class="desc">Días para el Mundial, próximos partidos y acceso rápido a tus grupos prode</div>
+    </div>
+    <div class="screen-card">
+      <div class="icon">📅</div>
+      <div class="title">Fixture</div>
+      <div class="desc">Todos los 104 partidos ordenados por fase: grupos, octavos, cuartos, semis y final</div>
+    </div>
+    <div class="screen-card">
+      <div class="icon">🏟️</div>
+      <div class="title">Grupos</div>
+      <div class="desc">Tabla de posiciones de los 12 grupos con resultados en tiempo real</div>
+    </div>
+    <div class="screen-card">
+      <div class="icon">🎯</div>
+      <div class="title">Mi Prode</div>
+      <div class="desc">Crear o unirte a grupos de prode con amigos y hacer tus predicciones</div>
+    </div>
+  </div>
+
+  <!-- SISTEMA DE PUNTUACIÓN -->
+  <h2 class="section">Sistema de puntuación del Prode</h2>
+  <p>Por cada partido podés ganar puntos según qué tan bien predijiste el resultado:</p>
+
+  <table>
+    <tr>
+      <th>Predicción correcta</th>
+      <th>Puntos</th>
+    </tr>
+    <tr>
+      <td>✅ Resultado exacto (ej: predijiste 2-1 y salió 2-1)</td>
+      <td><span class="pts">3 pts</span></td>
+    </tr>
+    <tr>
+      <td>✅ Ganador correcto (ej: predijiste que ganaba el local y ganó, pero no el marcador)</td>
+      <td><span class="pts">1 pt</span></td>
+    </tr>
+    <tr>
+      <td>⚽ Goleador del partido correcto (campo opcional)</td>
+      <td><span class="pts">+1 pt</span></td>
+    </tr>
+    <tr>
+      <td>❌ Resultado incorrecto</td>
+      <td><span class="pts">0 pts</span></td>
+    </tr>
+  </table>
+
+  <div class="box box-green">
+    <strong>Ejemplo:</strong> Si predijiste Argentina 2 – 1 Argelia y el resultado fue 2-1, ganás 3 pts. Si además pusiste "Messi" como goleador y Messi hizo un gol, ganás 4 pts totales.
+  </div>
+
+  <!-- CÓMO USAR EL PRODE -->
+  <h2 class="section">Cómo jugar el Prode grupal</h2>
+
+  <h3>Crear un grupo</h3>
+  <ol class="steps">
+    <li>Entrá a la sección <strong>Mi Prode</strong></li>
+    <li>Tocá <strong>"Crear grupo"</strong></li>
+    <li>Poné un nombre al grupo (ej: "Los del trabajo")</li>
+    <li>Se genera un <strong>código único</strong> de 6 letras — compartílo con tus amigos</li>
+  </ol>
+
+  <h3>Unirse a un grupo existente</h3>
+  <ol class="steps">
+    <li>Pedile el código a quien creó el grupo</li>
+    <li>Entrá a <strong>Mi Prode</strong> → <strong>"Unirse a grupo"</strong></li>
+    <li>Ingresá el código y tocá <strong>"Unirse"</strong></li>
+  </ol>
+
+  <h3>Hacer una predicción</h3>
+  <ol class="steps">
+    <li>Abrí tu grupo y entrá a la pestaña <strong>"Mis predicciones"</strong></li>
+    <li>Tocá cualquier partido para predecir</li>
+    <li>Ingresá los goles que creés que va a marcar cada equipo</li>
+    <li>Opcionalmente, escribí el nombre de un goleador para ganar 1 punto extra</li>
+    <li>Tocá <strong>"Guardar predicción"</strong></li>
+  </ol>
+
+  <div class="box box-yellow">
+    <strong>⏰ Importante:</strong> Solo podés predecir partidos que aún no empezaron. Hacé tus predicciones antes de que arranque cada partido.
+  </div>
+
+  <h3>Ver la tabla de posiciones</h3>
+  <p>Dentro del grupo, tocá la pestaña <strong>"Tabla"</strong> para ver cuántos puntos tiene cada participante. Los puntos se actualizan automáticamente cada vez que termina un partido.</p>
+
+  <!-- RESULTADOS AUTOMÁTICOS -->
+  <h2 class="section">Actualización automática de resultados</h2>
+  <p>
+    La app está configurada para actualizar los resultados automáticamente cada 10 minutos durante el Mundial. No hace falta que nadie cargue los resultados a mano.
+  </p>
+  <p>Una vez que termina un partido:</p>
+  <ul>
+    <li>El resultado aparece en el fixture y en la tabla de grupos</li>
+    <li>Los puntos del prode de todos los participantes se calculan al instante</li>
+    <li>La tabla de posiciones del prode se actualiza sola</li>
+  </ul>
+
+  <!-- PREGUNTAS FRECUENTES -->
+  <h2 class="section">Preguntas frecuentes</h2>
+
+  <h3>¿La app funciona sin internet?</h3>
+  <p>El fixture y los grupos se pueden ver sin internet (están guardados en el teléfono). Las predicciones y los resultados en tiempo real necesitan conexión.</p>
+
+  <h3>¿Cuántas personas pueden estar en un grupo prode?</h3>
+  <p>Hasta <strong>10 participantes</strong> por grupo.</p>
+
+  <h3>¿Puedo estar en varios grupos?</h3>
+  <p>Sí, podés crear o unirte a múltiples grupos (uno con el trabajo, otro con la familia, etc.).</p>
+
+  <h3>¿Puedo cambiar mi predicción?</h3>
+  <p>Sí, podés modificarla hasta que empiece el partido. Una vez que arranca, ya no se puede cambiar.</p>
+
+  <h3>¿Los datos se pierden si desinstalo la app?</h3>
+  <p>No. Todo se guarda en la nube (Supabase). Si volvés a instalar la app e iniciás sesión, tus predicciones y grupos siguen ahí.</p>
+
+  <h3>¿Cómo comparto la app con mis amigos?</h3>
+  <p>Simplemente mandales la dirección web (URL de Vercel) por WhatsApp. Ellos la abren en el navegador, se registran y la instalan en su celular.</p>
+
+  <!-- PIE -->
+  <div class="footer">
+    <p>🏆 Prode Mundial 2026 · Construido con React, Supabase y Vercel · Gratis para siempre</p>
+    <p style="margin-top: 6px;">Para imprimir como PDF: Archivo → Imprimir → Destino: Guardar como PDF</p>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  background-color: #0a0f1e;
+  color: white;
+  font-family: 'Inter', system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: #111827; }
+::-webkit-scrollbar-thumb { background: #374151; border-radius: 2px; }
+
+/* Safe area for iOS notch */
+.safe-top { padding-top: env(safe-area-inset-top); }
+.safe-bottom { padding-bottom: env(safe-area-inset-bottom); }
+
+@layer components {
+  .btn-primary {
+    @apply w-full bg-primary hover:bg-primary-dark text-dark font-bold py-3 px-6 rounded-xl transition-all duration-200 active:scale-95;
+  }
+  .btn-secondary {
+    @apply w-full bg-dark-3 hover:bg-dark-4 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-200 active:scale-95;
+  }
+  .input-field {
+    @apply w-full bg-dark-3 border border-dark-4 text-white placeholder-gray-500 rounded-xl px-4 py-3 focus:outline-none focus:border-primary transition-colors;
+  }
+  .card {
+    @apply bg-dark-2 rounded-2xl p-4 border border-dark-3;
+  }
+}
