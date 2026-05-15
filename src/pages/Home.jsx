@@ -77,22 +77,22 @@ export default function Home() {
 
       {/* Quick actions */}
       <div className="grid grid-cols-2 gap-3">
-        <Link to="/fixture" className="card flex flex-col items-center py-5 hover:border-primary/50 transition-colors active:scale-95">
+        <Link to="/app/fixture" className="card flex flex-col items-center py-5 hover:border-primary/50 transition-colors active:scale-95">
           <span className="text-3xl mb-2">📅</span>
           <span className="font-semibold text-sm">Fixture</span>
           <span className="text-xs text-gray-500 mt-0.5">104 partidos</span>
         </Link>
-        <Link to="/grupos" className="card flex flex-col items-center py-5 hover:border-primary/50 transition-colors active:scale-95">
+        <Link to="/app/grupos" className="card flex flex-col items-center py-5 hover:border-primary/50 transition-colors active:scale-95">
           <span className="text-3xl mb-2">🏟️</span>
           <span className="font-semibold text-sm">Grupos</span>
           <span className="text-xs text-gray-500 mt-0.5">12 grupos</span>
         </Link>
-        <Link to="/prode" className="card flex flex-col items-center py-5 hover:border-primary/50 transition-colors active:scale-95">
+        <Link to="/app/prode" className="card flex flex-col items-center py-5 hover:border-primary/50 transition-colors active:scale-95">
           <span className="text-3xl mb-2">🎯</span>
           <span className="font-semibold text-sm">Mi Prode</span>
           <span className="text-xs text-gray-500 mt-0.5">Predecí resultados</span>
         </Link>
-        <Link to="/perfil" className="card flex flex-col items-center py-5 hover:border-primary/50 transition-colors active:scale-95">
+        <Link to="/app/perfil" className="card flex flex-col items-center py-5 hover:border-primary/50 transition-colors active:scale-95">
           <span className="text-3xl mb-2">👤</span>
           <span className="font-semibold text-sm">Mi Perfil</span>
           <span className="text-xs text-gray-500 mt-0.5">Stats y puntos</span>
@@ -104,7 +104,7 @@ export default function Home() {
         <div>
           <div className="flex justify-between items-center mb-3">
             <h2 className="font-bold text-lg">Próximos partidos</h2>
-            <Link to="/fixture" className="text-primary text-sm font-medium">Ver todos</Link>
+            <Link to="/app/fixture" className="text-primary text-sm font-medium">Ver todos</Link>
           </div>
           <div className="space-y-2">
             {upcomingMatches.map(match => (
@@ -133,13 +133,13 @@ export default function Home() {
       <div>
         <div className="flex justify-between items-center mb-3">
           <h2 className="font-bold text-lg">Mis grupos prode</h2>
-          <Link to="/prode" className="text-primary text-sm font-medium">Gestionar</Link>
+          <Link to="/app/prode" className="text-primary text-sm font-medium">Gestionar</Link>
         </div>
         {myGroups.length === 0 ? (
           <div className="card text-center py-8">
             <div className="text-4xl mb-2">🎯</div>
             <p className="text-gray-400 text-sm">No estás en ningún grupo todavía</p>
-            <Link to="/prode" className="text-primary text-sm font-semibold mt-2 inline-block">
+            <Link to="/app/prode" className="text-primary text-sm font-semibold mt-2 inline-block">
               Crear o unirte a uno →
             </Link>
           </div>
