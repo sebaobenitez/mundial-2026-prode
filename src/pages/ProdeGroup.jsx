@@ -162,7 +162,7 @@ export default function ProdeGroup() {
   return (
     <div className="flex flex-col h-full">
       <div className="px-4 pt-4 pb-3">
-        <button onClick={() => navigate('/prode')} className="text-gray-400 text-sm mb-2">← Volver</button>
+        <button onClick={() => navigate('/app/prode')} className="text-gray-400 text-sm mb-2">← Volver</button>
         <h1 className="text-xl font-extrabold">{group.name}</h1>
         <p className="text-gray-400 text-sm">Código: <span className="text-primary font-mono font-bold">{group.code}</span> · {members.length}/10 participantes</p>
       </div>

@@ -146,7 +146,7 @@ export default function Home() {
         ) : (
           <div className="space-y-2">
             {myGroups.map(g => (
-              <Link key={g.id} to={`/prode/${g.id}`} className="card flex justify-between items-center active:scale-95">
+              <Link key={g.id} to={`/app/prode/${g.id}`} className="card flex justify-between items-center active:scale-95">
                 <div>
                   <div className="font-semibold">{g.name}</div>
                   <div className="text-xs text-gray-500">Código: {g.code}</div>
