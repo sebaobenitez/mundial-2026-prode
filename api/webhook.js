@@ -1,9 +1,9 @@
-const { Resend } = require('resend')
+import { Resend } from 'resend'
 
 const resend = new Resend(process.env.RESEND_API_KEY)
 const APP_URL = 'https://mundial-2026-prode-tawny.vercel.app'
 
-module.exports = async function handler(req, res) {
+export default async function handler(req, res) {
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' })
   }
@@ -48,7 +48,6 @@ module.exports = async function handler(req, res) {
     return res.status(200).json({ received: true })
   } catch (err) {
     console.error('Webhook error:', err)
-    // Siempre devolver 200 para que MP no reintente
     return res.status(200).json({ received: true })
   }
 }
