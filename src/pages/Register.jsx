@@ -20,7 +20,7 @@ export default function Register() {
     setLoading(true)
     try {
       await signUp(email, password, username)
-      navigate('/')
+      navigate('/app')
     } catch (err) {
       setError(err.message || 'Error al registrarse')
     } finally {

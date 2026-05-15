@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import { AuthProvider, useAuth } from './context/AuthContext'
 import Layout from './components/Layout'
+import Landing from './pages/Landing'
 import Login from './pages/Login'
 import Register from './pages/Register'
 import Home from './pages/Home'
@@ -26,7 +27,7 @@ function ProtectedRoute({ children }) {
 function PublicRoute({ children }) {
   const { user, loading } = useAuth()
   if (loading) return null
-  return !user ? children : <Navigate to="/" replace />
+  return !user ? children : <Navigate to="/app" replace />
 }
 
 export default function App() {
@@ -34,9 +35,10 @@ export default function App() {
     <AuthProvider>
       <BrowserRouter>
         <Routes>
+          <Route path="/" element={<Landing />} />
           <Route path="/login" element={<PublicRoute><Login /></PublicRoute>} />
           <Route path="/register" element={<PublicRoute><Register /></PublicRoute>} />
-          <Route path="/" element={<ProtectedRoute><Layout /></ProtectedRoute>}>
+          <Route path="/app" element={<ProtectedRoute><Layout /></ProtectedRoute>}>
             <Route index element={<Home />} />
             <Route path="fixture" element={<Fixture />} />
             <Route path="grupos" element={<Grupos />} />
